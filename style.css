@@ -1,0 +1,163 @@
+:root {
+  /* light theme */
+  --bg-color: hsl(212, 45%, 89%);
+  --main-color: hsl(0, 0%, 100%);
+  --header-color: hsl(218, 44%, 22%);
+  --text-color: hsl(220, 15%, 55%);
+
+  /* dark theme */
+  /* 
+  --bg-color: hsl(210, 15%, 15%);
+  --main-color: hsl(210, 15%, 20%);
+  --header-color: hsl(218, 44%, 100%);
+  --text-color: hsl(218, 16%, 70%);
+   */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Outfit", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  text-align: center;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  height: 100vh;
+  background-color: var(--bg-color);
+}
+
+/*  Switch button styles */
+
+.switch {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.2rem 0.5rem;
+  margin: 1rem;
+
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  background-color: var(--main-color);
+  color: var(--header-color);
+  border: 1px solid var(--main-color);
+  transition: 0.3s ease-in-out;
+}
+
+.switch:hover {
+  background-color: var(--bg-color);
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
+}
+
+/* Card styles */
+
+.card,
+.card__img {
+  border-radius: 1rem;
+}
+
+.card {
+  width: 330px;
+  border-radius: 1rem;
+  background-color: var(--main-color);
+}
+
+.card__content {
+  padding: 1rem;
+}
+
+.card__img {
+  width: 100%;
+}
+
+.card__header,
+.card__text {
+  padding: 1.2rem;
+}
+
+.card__header {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--header-color);
+}
+
+.card__text {
+  padding-top: 0;
+  color: var(--text-color);
+}
+
+.card__img--zoomed {
+  position: absolute;
+  top: 50vh;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+
+  max-width: 576px;
+  margin: 0 auto;
+}
+
+/* light theme styles */
+
+body.light-theme {
+  --bg-color: hsl(212, 45%, 89%);
+}
+
+.card.light-theme {
+  --main-color: hsl(0, 0%, 100%);
+}
+
+.card__header.light-theme {
+  --header-color: hsl(218, 44%, 22%);
+}
+
+.card__text.light-theme {
+  --text-color: hsl(220, 15%, 55%);
+}
+
+/* Dark theme styles */
+
+body.dark-theme {
+  --bg-color: hsl(210, 15%, 15%);
+}
+
+.card.dark-theme {
+  --main-color: hsl(210, 15%, 20%);
+}
+
+.card__header.dark-theme {
+  --header-color: hsl(218, 44%, 100%);
+}
+
+.card__text.dark-theme {
+  --text-color: hsl(220, 15%, 55%);
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    --bg-color: hsl(210, 15%, 15%);
+  }
+
+  .card {
+    --main-color: hsl(210, 15%, 20%);
+  }
+
+  .card__header {
+    --header-color: hsl(218, 44%, 100%);
+  }
+
+  .card__text {
+    --text-color: hsl(220, 15%, 55%);
+  }
+}
